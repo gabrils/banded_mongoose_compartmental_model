@@ -1,0 +1,21 @@
+Troop,Type,Type Code
+CCH,"Lodge, national park",0
+CGL,"Lodge, national park",0
+CSL,"Lodge, residential, urban",1
+FARM,"Residential, undeveloped, urban",1
+FOR,"Lodge, residential, urban",1
+HIP,National park,0
+KAZ,"Residential, urban, undeveloped",1
+KWA,"Lodge, residential, undeveloped",1
+KUBU,"Lodge, residential, undeveloped",1
+MOGO,"Lodge, residential, urban",1
+MOW,"Lodge, residential, urban",1
+PLAT,"Residential, urban",1
+SDRF,National park,0
+SEF,"Lodge, residential, undeveloped, urban",1
+TRS,"Lodge, residential, undeveloped, urban",1
+WA,"Lodge, residential, urban",1
+WPLAT,National park,0
+LIB,Residential Urban,1
+ODH,Residential Urban,1
+WDL,Residential Urban,1
