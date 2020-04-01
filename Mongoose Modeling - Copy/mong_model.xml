@@ -1,0 +1,71 @@
+# Keywords
+Description: deterministic mongoose model to be evaluated stochastically
+Modelname: mong_model
+Species_In_Conc: False
+Output_In_Conc: False
+
+# Parameters
+b = 3.6/4
+b_d = 0.07/4
+s_p = 1 - (0.25*0.701)
+s_j = 1 - (0.25*0.345)
+s_s = 1 - (0.25*0.216)
+s_a = 1 - (0.25*0.143)
+
+##Loop for Wet/Dry season
+looper = 1
+
+if looper == 1 or looper == 2:
+    looper = looper + 1
+    
+    Function: pup_pop,b,breed_pop {
+    b*breed_pop
+    }
+
+    Function: juv_pop,s_p,pup_pop {
+    s_p*pup_pop
+    }
+
+    Function: sub1_pop,s_j,juv_pop {
+    s_j*juv_pop
+    }
+
+    Function: sub2_pop,s_s,sub1_pop {
+    s_s*sub1_pop
+    }
+
+    Function: ad_pop,s_s,sub2_pop,s_a,ad_pop {
+    (s_s*sub2_pop) + s_a*ad_pop
+    }
+
+    Function: breed_pop,s_s,sub2_pop,s_a,breed_pop {
+    (0.5*s_s*sub2_pop) + (s_a*breed_pop)
+
+else:
+    if looper > 4:
+        looper = 1
+
+    looper = looper + 1
+
+    Function: pup_pop,b,breed_pop {
+    b_d*breed_pop
+    }
+
+    Function: juv_pop,s_p,pup_pop {
+    s_p*pup_pop
+    }
+
+    Function: sub1_pop,s_j,juv_pop {
+    s_j*juv_pop
+    }
+
+    Function: sub2_pop,s_s,sub1_pop {
+    s_s*sub1_pop
+    }
+
+    Function: ad_pop,s_s,sub2_pop,s_a,ad_pop {
+    (s_s*sub2_pop) + s_a*ad_pop
+    }
+
+    Function: breed_pop,s_s,sub2_pop,s_a,breed_pop {
+    (0.5*s_s*sub2_pop) + (s_a*breed_pop)
